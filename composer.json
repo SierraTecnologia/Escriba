@@ -1,0 +1,86 @@
+{
+    "name": "sierratecnologia/escritor",
+    "description": "escritor",
+    "type": "library",
+    "keywords": [
+        "sierratecnologia",
+        "escritor"
+    ],
+    "license": "MIT",
+    "homepage": "https://sierratecnologia.com/packages/escritor/",
+    "support": {
+        "email": "help@sierratecnologia.com.br",
+        "issues": "https://github.com/sierratecnologia/escritor/issues",
+        "source": "https://github.com/sierratecnologia/escritor",
+        "docs": "https://github.com/sierratecnologia/escritor/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "SierraTecnologia",
+            "homepage": "https://sierratecnologia.com.br",
+            "email": "help@sierratecnologia.com.br"
+        },
+        {
+            "name": "Ricardo Rebello Sierra",
+            "email": "contato@ricardosierra.com.br"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "sierratecnologia/pedreiro": "dev-master",
+        "sierratecnologia/muleta": "dev-master",
+        "sierratecnologia/crypto": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories",
+            ".discovery"
+        ],
+        "psr-4": {
+            "Escritor\\": "src/"
+        },
+        "files": [
+            "helpers/general.php",
+            "helpers/escritor_helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Escritor\\EscritorProvider"
+            ],
+            "dont-discover": [
+                "sentry/sentry-laravel",
+                "laravel/cashier",
+                "hyn/multi-tenant",
+                "scaffold-interface"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
