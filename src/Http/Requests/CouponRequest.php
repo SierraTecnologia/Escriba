@@ -14,6 +14,6 @@ class CouponRequest extends EscritorRequest
      */
     public function rules()
     {
-        return Coupon::$rules;
+        return app(Coupon::class)->rules;
     }
 }

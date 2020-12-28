@@ -14,6 +14,6 @@ class TransactionsRequest extends EscritorRequest
      */
     public function rules()
     {
-        return Transaction::$rules;
+        return app(Transaction::class)->rules;
     }
 }
