@@ -18,7 +18,7 @@
     {!! FormMaker::setColumns(2)->fromObject($product, \Illuminate\Support\Facades\Config::get('siravel.forms.details.options')) !!}
 
     <div class="form-group text-right">
-        <a href="{!! URL::previous() !!}" class="btn btn-secondary float-left">Cancel</a>
+        <a href="{!! URL::previous() !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     </div>
 
