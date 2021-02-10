@@ -82,5 +82,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "phpro/grumphp": "^1.3"
+    }
 }
