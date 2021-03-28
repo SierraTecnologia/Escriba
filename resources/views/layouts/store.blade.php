@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.master')
+@extends(Templeiro::loadRelativeView('layouts.master'))
 
 @section('stylesheets')
     <link rel="stylesheet" href="{!! asset('css/store.css') !!}">
