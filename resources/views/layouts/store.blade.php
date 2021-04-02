@@ -5,7 +5,7 @@
 @stop
 
 @section('store-header')
-    @include('siravel-frontend::layouts.store_header')
+    @include(\Templeiro::loadRelativeView('layouts.store_header'))
 @stop
 
 @section('content')

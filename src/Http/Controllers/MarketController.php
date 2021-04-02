@@ -36,7 +36,7 @@ class EscritorController extends Base
         // 'to',
         // 'code' => [
         //     'type' => 'select',
-        //     'options' => 'Facilitador\Models\RedirectRule::getCodes()',
+        //     'options' => 'Pedreiro\Models\RedirectRule::getCodes()',
         // ],
         // 'label',
     ];
@@ -73,7 +73,7 @@ class EscritorController extends Base
         //     'code' => [
         //         'label' => __('pedreiro::redirect_rules.controller.search.code'),
         //         'type' => 'select',
-        //         'options' => 'Facilitador\Models\RedirectRule::getCodes()',
+        //         'options' => 'Pedreiro\Models\RedirectRule::getCodes()',
         //     ],
         //     'label' => [
         //         'label' => __('pedreiro::redirect_rules.controller.search.label'),

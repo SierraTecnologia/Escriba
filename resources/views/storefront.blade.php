@@ -1,12 +1,12 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 
-    @include('siravel-frontend::storefront.banner')
+    @include(\Templeiro::loadRelativeView('storefront.banner'))
 
-    @include('siravel-frontend::products.featured')
+    @include(\Templeiro::loadRelativeView('products.featured'))
 
-    @include('siravel-frontend::plans.featured')
+    @include(\Templeiro::loadRelativeView('plans.featured'))
 
     <div class="row">
         @foreach ($products as $product)

@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('stylesheets')
     @parent
@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col-md-8">
-            @include('siravel-frontend::checkout.products')
+            @include(\Templeiro::loadRelativeView('checkout.products'))
         </div>
         <div class="col-md-4">
             <div class="form-group">

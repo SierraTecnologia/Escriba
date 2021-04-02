@@ -1,8 +1,8 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 
-    @include('siravel-frontend::profile.tabs')
+    @include(\Templeiro::loadRelativeView('profile.tabs'))
 
     <div class="row">
         <div class="col-md-6 col-md-offset-3">

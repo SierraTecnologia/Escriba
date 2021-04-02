@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 

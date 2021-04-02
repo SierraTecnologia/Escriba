@@ -1,8 +1,8 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 
-    @include('siravel-frontend::products.featured')
+    @include(\Templeiro::loadRelativeView('products.featured'))
 
     <table class="table table-stripped">
         <thead>

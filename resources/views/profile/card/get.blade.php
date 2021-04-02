@@ -1,8 +1,8 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 
-    @include('siravel-frontend::profile.tabs')
+    @include(\Templeiro::loadRelativeView('profile.tabs'))
 
     <div class="tabs-content">
         <div role="tabpanel" class="tab-pane tab-active">

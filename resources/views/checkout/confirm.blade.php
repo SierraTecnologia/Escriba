@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.store')
+@extends(\Templeiro::loadRelativeView('layouts.store'))
 
 @section('store-content')
 
@@ -29,8 +29,8 @@
         </div>
         <div class="col-md-8">
             <h4 class="mb-4">Shopping Cart</h4>
-            @include('siravel-frontend::checkout.coupon')
-            @include('siravel-frontend::checkout.products')
+            @include(\Templeiro::loadRelativeView('checkout.coupon'))
+            @include(\Templeiro::loadRelativeView('checkout.products'))
             <a class="float-right btn btn-primary" href="{!! route('siravel.payment') !!}">Purchase</a>
         </div>
     </div>
