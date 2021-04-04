@@ -136,8 +136,7 @@ class ProductController extends SitecController
      */
     public function setImages(Request $request)
     {
-        dd(
-
+        dd('EscritoeProducts',
             $request->all()
         );
 
