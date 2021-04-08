@@ -5,18 +5,19 @@ namespace Escritor\Http\Controllers;
 use Illuminate\Http\Request;
 use Escritor\Http\Controllers\Controller;
 use Escritor\Services\CartService;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 use Redirect;
 use StoreHelper;
 
 class CartController extends Controller
 {
+    use ApiControllerTrait;
+
     protected $cartService;
 
-    public function __construct(CartService $cartService, RiCaResponseService $siravelResponseService)
+    public function __construct(CartService $cartService)
     {
         $this->cart = $cartService;
-        $this->responseService = $siravelResponseService;
     }
 
     /**

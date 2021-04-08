@@ -5,16 +5,17 @@ namespace Escritor\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Escritor\Http\Controllers\Controller;
 use Escritor\Services\FavoriteService;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 
 class FavoriteController extends Controller
 {
+    use ApiControllerTrait;
+    
     protected $favoriteService;
 
-    public function __construct(FavoriteService $favoriteService, RiCaResponseService $siravelResponseService)
+    public function __construct(FavoriteService $favoriteService)
     {
         $this->service = $favoriteService;
-        $this->responseService = $siravelResponseService;
     }
 
     /**
@@ -27,10 +28,10 @@ class FavoriteController extends Controller
         $items = $this->service->all();
 
         if (!is_null($items) && $items->count() > 0) {
-            return $this->responseService->apiResponse('success', $items->pluck('product_id'));
+            return $this->apiResponse('success', $items->pluck('product_id'));
         }
 
-        return $this->responseService->apiResponse('success', []);
+        return $this->apiResponse('success', []);
     }
 
     /**
@@ -45,10 +46,10 @@ class FavoriteController extends Controller
         $result = $this->service->add($request->productId);
 
         if ($result) {
-            return $this->responseService->apiResponse('success', 1);
+            return $this->apiResponse('success', 1);
         }
 
-        return $this->responseService->apiResponse('error', 'Could not be added to Favorites');
+        return $this->apiResponse('error', 'Could not be added to Favorites');
     }
 
     /**
@@ -62,6 +63,6 @@ class FavoriteController extends Controller
     {
         $this->service->remove($request->productId);
 
-        return $this->responseService->apiResponse('success', 0);
+        return $this->apiResponse('success', 0);
     }
 }
