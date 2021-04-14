@@ -33,7 +33,7 @@ class PersonService
      */
     public function paginated()
     {
-        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('siravel.pagination', 25));
     }
 
     /**
@@ -57,7 +57,7 @@ class PersonService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('siravel.pagination', 25));
     }
 
     /**
