@@ -27,9 +27,9 @@
     ],
     "require": {
         "php": "^7.2|^8.0",
-        "sierratecnologia/pedreiro": "dev-master",
-        "sierratecnologia/muleta": "dev-master",
-        "sierratecnologia/crypto": "dev-master"
+        "sierratecnologia/pedreiro": "^0.4.0",
+        "sierratecnologia/muleta": "^0.4.0",
+        "sierratecnologia/crypto": "^0.4.0"
     },
     "autoload": {
         "classmap": [
@@ -62,7 +62,6 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
     "config": {
         "sort-packages": true,
         "preferred-install": "dist",
