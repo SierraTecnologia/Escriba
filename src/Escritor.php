@@ -42,6 +42,9 @@ class Escritor
         return $this->version;
     }
 
+    /**
+     * @return void
+     */
     protected function findVersion()
     {
         if (!is_null($this->version)) {
@@ -68,7 +71,7 @@ class Escritor
      *
      * @param string $string
      *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function url($string)
     {

@@ -62,12 +62,12 @@ class TransactionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\CreateProductRequest $request
+     * @param Request $request
      * @param int                                   $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): self
     {
         $result = $this->service->update($id, $request->except(['_token', '_method']));
 
@@ -83,9 +83,9 @@ class TransactionController extends Controller
      *
      * @param Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function refund(Request $request)
+    public function refund(Request $request): self
     {
         $result = $this->service->refund($request->uuid);
 

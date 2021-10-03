@@ -28,7 +28,7 @@ class Variant extends EscritorModel
         return app(ProductService::class)->variantOptions($this);
     }
 
-    public function rawValue($value)
+    public function rawValue($value): string
     {
         $valueWithoutParenthesis = preg_replace("/\([^)]+\)/", "", $value);
         $valueWithoutSquareParenthesis = preg_replace("/\[[^)]+\]/", "", $valueWithoutParenthesis);

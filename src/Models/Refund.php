@@ -27,17 +27,17 @@ class Refund extends EscritorModel
 
     public $rules = [];
 
-    public function transaction()
+    public function transaction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Transaction::class);
     }
 
-    public function orderItem()
+    public function orderItem(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(OrderItem::class);
     }
 
-    public function getAmountAttribute($value)
+    public function getAmountAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }

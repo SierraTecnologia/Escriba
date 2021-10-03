@@ -124,9 +124,9 @@ class OrderRepository
      * @param Order $order
      * @param array $payload
      *
-     * @return Orders
+     * @return bool
      */
-    public function update($order, $payload)
+    public function update($order, $payload): bool
     {
         if (isset($payload['is_shipped'])) {
             $payload['is_shipped'] = true;

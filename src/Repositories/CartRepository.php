@@ -19,8 +19,10 @@ class CartRepository
 
     /**
      * Sync with the session cart.
+     *
+     * @return void
      */
-    public function syncronize()
+    public function syncronize(): void
     {
         $cartContents = Session::get('cart');
 

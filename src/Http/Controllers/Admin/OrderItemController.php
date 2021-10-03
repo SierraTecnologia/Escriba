@@ -33,9 +33,9 @@ class OrderItemController extends Controller
      *
      * @param Request $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function cancel(Request $request)
+    public function cancel(Request $request): self
     {
         $result = $this->service->cancel($request->id);
 

@@ -18,7 +18,7 @@ class CardController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function getCard()
     {
@@ -32,7 +32,7 @@ class CardController extends Controller
     /**
      * Display the change card.
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function changeCard()
     {

@@ -111,9 +111,9 @@ class OrderItemService
      *
      * @param int $id
      *
-     * @return bool
+     * @return bool|null
      */
-    public function cancel($id)
+    public function cancel($id): ?bool
     {
         try {
             $orderItem = $this->find($id);

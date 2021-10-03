@@ -57,12 +57,15 @@ class Product extends EscritorModel
         'hero_image_url',
     ];
 
-    public function images()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images(): self
     {
         return $this->hasMany(Image::class, 'entity_id')->where('entity_type', 'product');
     }
 
-    public function getPriceAttribute($value)
+    public function getPriceAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
@@ -81,6 +84,9 @@ class Product extends EscritorModel
         return $this->url;
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public function getFileDownloadHrefAttribute()
     {
         return url(app(FileService::class)->fileAsDownload($this->file, $this->file));

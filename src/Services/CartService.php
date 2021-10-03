@@ -260,8 +260,10 @@ class CartService
      * Add coupon
      *
      * @param void
+     *
+     * @return true
      */
-    public function addCoupon($couponCode)
+    public function addCoupon($couponCode): bool
     {
         $coupon = app(Coupon::class)->where('code', $couponCode)->where('for_subscriptions', false)->first();
 
@@ -283,8 +285,10 @@ class CartService
      * Remove coupon
      *
      * @param void
+     *
+     * @return true
      */
-    public function removeCoupon()
+    public function removeCoupon(): bool
     {
         Session::forget('coupon_code');
 
@@ -294,9 +298,9 @@ class CartService
     /**
      * Get the current coupon code
      *
-     * @return integer
+     * @return float
      */
-    public function getCurrentCouponValue($code = null)
+    public function getCurrentCouponValue($code = null): float
     {
         $value = 0;
 
@@ -342,9 +346,9 @@ class CartService
      *
      * @param Product $item
      *
-     * @return int
+     * @return float
      */
-    public function getItemShipping($item)
+    public function getItemShipping($item): float
     {
         return round(app(StoreLogistics::class)->singleItemShipping($item, auth()->user()), 2);
     }
@@ -354,9 +358,9 @@ class CartService
      *
      * @param Product $item
      *
-     * @return int
+     * @return float
      */
-    public function getItemTax($item)
+    public function getItemTax($item): float
     {
         $taxRate = (app(LogisticService::class)->getTaxPercent(auth()->user()) / 100);
         $subtotal = $this->getItemSubtotal($item);
@@ -369,7 +373,9 @@ class CartService
      *
      * @param Product $item
      *
-     * @return int
+     * @return float|int
+     *
+     * @psalm-return 0|float
      */
     public function getItemSubtotal($item)
     {

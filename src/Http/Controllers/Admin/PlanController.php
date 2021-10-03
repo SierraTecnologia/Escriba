@@ -44,7 +44,7 @@ class PlanController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -54,7 +54,7 @@ class PlanController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\PlanRequest $request
+     * @param PlanRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -89,12 +89,12 @@ class PlanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\PlanRequest $request
+     * @param Request $request
      * @param int                          $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): self
     {
         $result = $this->service->update($id, $request->except('_token', '_method'));
 
@@ -111,9 +111,9 @@ class PlanController extends Controller
      * @param \Illuminate\Http\Request $request
      * @param int                      $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function stateChange(Request $request, $id)
+    public function stateChange(Request $request, $id): self
     {
         $result = $this->service->stateChange($id, $request->state);
 
@@ -130,9 +130,9 @@ class PlanController extends Controller
      * @param int $plan
      * @param int $userMeta
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function cancelSubscription($plan, $userMeta)
+    public function cancelSubscription($plan, $userMeta): self
     {
         $result = $this->service->cancelSubscription($plan, $userMeta);
 

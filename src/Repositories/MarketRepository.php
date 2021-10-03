@@ -32,11 +32,11 @@ class EscritorRepository
         return $this->model->orderBy('created_at', 'desc')->get();
     }
 
-    public function allForCustomer(Collections $products, $location = false)
+    public function allForCustomer(Collections $products, $location = false): void
     {
     }
 
-    public function allGroupedByCategory()
+    public function allGroupedByCategory(): void
     {
         $users = DB::table('users')
             ->orderBy('name', 'desc')

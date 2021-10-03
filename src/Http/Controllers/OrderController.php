@@ -44,9 +44,9 @@ class OrderController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function cancelOrder($id)
+    public function cancelOrder($id): \Illuminate\Http\RedirectResponse
     {
         if (app(OrderService::class)->cancelOrder(auth()->id(), $id)) {
             return back()->with('message', 'Order cancelled');

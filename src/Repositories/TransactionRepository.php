@@ -59,9 +59,11 @@ class TransactionRepository
      * @param array $payload
      * @param int   $paginate
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return (array|mixed)[]
+     *
+     * @psalm-return array{0: mixed, 1: array, 2: mixed}
      */
-    public function search($payload, $paginate)
+    public function search($payload, $paginate): array
     {
         $query = $this->model->orderBy('created_at', 'desc');
         $query->where('id', 'LIKE', '%'.$payload.'%');
@@ -142,7 +144,7 @@ class TransactionRepository
      *
      * @return \Illuminate\Support\Collection|null|static|Transactions
      */
-    public function getByCustomerAndUuid($customer, $uuid)
+    public function getByCustomerAndUuid($customer, int $uuid)
     {
         return $this->model->where('user_id', $customer)->where('uuid', $uuid)->first();
     }
@@ -152,10 +154,11 @@ class TransactionRepository
      *
      * @param Transactions $transactions
      * @param array        $payload
+     * @param true[] $transaction
      *
      * @return Transactions
      */
-    public function update($transaction, $payload)
+    public function update(array $transaction, $payload)
     {
         return $transaction->update($payload);
     }

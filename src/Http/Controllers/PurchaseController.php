@@ -42,7 +42,7 @@ class PurchaseController extends Controller
     /**
      * Request a refund for a purchase
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function requestRefund($id)
     {

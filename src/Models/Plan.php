@@ -58,17 +58,17 @@ class Plan extends EscritorModel
         }
     }
 
-    public function getAmountAttribute($value)
+    public function getAmountAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getHrefAttribute()
+    public function getHrefAttribute(): string
     {
         return route('siravel.escritor.plan', [$this->uuid]);
     }
 
-    public function subscribeBtn($content = '', $class = '')
+    public function subscribeBtn($content = '', $class = ''): string
     {
         return '<form method="post" action="'.route('siravel.escritor.subscribe', [crypto_encrypt($this->id)]).'">'.csrf_field().'<button class="'.$class.'">'.$content.'</button></form>';
     }

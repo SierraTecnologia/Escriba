@@ -16,17 +16,20 @@ class Currency
         return $this->value;
     }
 
-    public function toHtml()
+    public function toHtml(): string
     {
         return number_format($this->value * 0.01, 2, '.', '');
     }
 
-    public function integer()
+    public function integer(): int
     {
         return (int) $this->value;
     }
 
-    public function add($money)
+    /**
+     * @return static
+     */
+    public function add($money): self
     {
         $this->value += $money;
 

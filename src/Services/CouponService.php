@@ -45,8 +45,10 @@ class CouponService
 
     /**
      * Collect the new coupons.
+     *
+     * @return void
      */
-    public function collectNewCoupons()
+    public function collectNewCoupons(): void
     {
         $sitecpaymentCoupons = $this->sitecpaymentService->collectSierraTecnologiaCoupons()->data;
 

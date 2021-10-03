@@ -38,9 +38,9 @@ class ProductVariantController extends SitecController
      * Get a product's variants.
      *
      * @param int                     $id
-     * @param Illuminate\Http\Request $request
+     * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function variants($id, Request $request)
     {
@@ -64,7 +64,7 @@ class ProductVariantController extends SitecController
     /**
      * Save a variant.
      *
-     * @param Illuminate\Http\Request $request
+     * @param Request $request
      *
      * @return Illuminate\Http\Response
      */
@@ -78,7 +78,7 @@ class ProductVariantController extends SitecController
     /**
      * Delete a variant.
      *
-     * @param Illuminate\Http\Request $request
+     * @param Request $request
      *
      * @return Illuminate\Http\Response
      */

@@ -23,9 +23,9 @@ class CartController extends Controller
     /**
      * Get cart contents
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function cart()
+    public function cart(): \Response
     {
         return $this->apiResponse(
             'success', [
@@ -43,9 +43,9 @@ class CartController extends Controller
     /**
      * Get cart item count
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function cartCount()
+    public function cartCount(): \Response
     {
         $count = $this->cart->itemCount();
 
@@ -57,9 +57,9 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function changeCartCount(Request $request)
+    public function changeCartCount(Request $request): \Response
     {
         $count = $this->cart->changeItemQuantity($request->id, $request->count);
 
@@ -71,9 +71,9 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function addToCart(Request $request)
+    public function addToCart(Request $request): \Response
     {
         $result = $this->cart->addToCart($request->id, $request->type, $request->quantity, $request->variants);
 
@@ -89,9 +89,9 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function removeFromCart(Request $request)
+    public function removeFromCart(Request $request): \Response
     {
         $this->cart->removeFromCart($request->id, $request->type);
 

@@ -21,9 +21,9 @@ class FavoriteController extends Controller
     /**
      * List all customer favorites
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function all()
+    public function all(): \Response
     {
         $items = $this->service->all();
 
@@ -39,9 +39,9 @@ class FavoriteController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function add(Request $request)
+    public function add(Request $request): \Response
     {
         $result = $this->service->add($request->productId);
 
@@ -57,9 +57,9 @@ class FavoriteController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Response
      */
-    public function remove(Request $request)
+    public function remove(Request $request): \Response
     {
         $this->service->remove($request->productId);
 

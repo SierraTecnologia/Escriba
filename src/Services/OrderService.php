@@ -104,7 +104,7 @@ class OrderService
      *
      * @param int $id
      *
-     * @return Orders
+     * @return Orders|false
      */
     public function cancel($orderId)
     {

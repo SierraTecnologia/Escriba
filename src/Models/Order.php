@@ -35,12 +35,12 @@ class Order extends EscritorModel
         'transaction'
     ];
 
-    public function transaction()
+    public function transaction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Transaction::class);
     }
 
-    public function hasRefundedOrderItems()
+    public function hasRefundedOrderItems(): bool
     {
         if ($this->items->isNotEmpty()) {
             if ($this->items->where('was_refunded', true)->count() > 0) {
@@ -51,7 +51,7 @@ class Order extends EscritorModel
         return false;
     }
 
-    public function hasActiveOrderItems()
+    public function hasActiveOrderItems(): bool
     {
         if ($this->items->isNotEmpty()) {
             if ($this->items->where('was_refunded', false)->count() > 0) {
@@ -87,9 +87,9 @@ class Order extends EscritorModel
     /**
      * Get the corresponding OrderItems
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function items()
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(OrderItem::class);
     }
@@ -97,9 +97,9 @@ class Order extends EscritorModel
     /**
      * Determine the user that made this order
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }

@@ -18,7 +18,7 @@ class ProfileController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function customerProfile()
     {
@@ -28,9 +28,9 @@ class ProfileController extends Controller
     /**
      * Update Customer profile.
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function customerProfileUpdate(Request $request)
+    public function customerProfileUpdate(Request $request): self
     {
         $this->customer->updateProfileAddress($request->except('_token'));
 
@@ -40,7 +40,7 @@ class ProfileController extends Controller
     /**
      * Add a coupon form
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function addCoupon(Request $request)
     {
@@ -50,9 +50,9 @@ class ProfileController extends Controller
     /**
      * Add coupon to profile.
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function submitCoupon(Request $request)
+    public function submitCoupon(Request $request): self
     {
         try {
             auth()->user()->meta->applyCoupon($request->coupon);

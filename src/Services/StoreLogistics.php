@@ -62,6 +62,9 @@ class StoreLogistics implements LogisticServiceInterface
     |--------------------------------------------------------------------------
     */
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function afterPurchase($user, $transaction, $cart, $result)
     {
         Log::info('After purchase');
@@ -75,6 +78,9 @@ class StoreLogistics implements LogisticServiceInterface
         }
     }
 
+    /**
+     * @return true
+     */
     public function afterSubscription($user, $plan)
     {
         // code...
@@ -83,6 +89,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function afterRefundRequest($transaction)
     {
         // code...
@@ -91,6 +100,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function afterRefund($transaction)
     {
         // code...
@@ -99,6 +111,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function cancelSubscription($user, $plan)
     {
         // code...
@@ -113,6 +128,9 @@ class StoreLogistics implements LogisticServiceInterface
     |--------------------------------------------------------------------------
     */
 
+    /**
+     * @return true
+     */
     public function afterPlaceOrder($user, $transaction, $cart)
     {
         // places order into orders table
@@ -121,6 +139,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function orderCreated($order)
     {
         // sets order to shipped - and does any needed logic
@@ -129,6 +150,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function shipOrder($order)
     {
         // sets order to shipped - and does any needed logic
@@ -137,6 +161,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function cancelOrder($order)
     {
         // sets order to shipped - and does any needed logic
@@ -145,6 +172,9 @@ class StoreLogistics implements LogisticServiceInterface
         return true;
     }
 
+    /**
+     * @return true
+     */
     public function afterItemCancelled($orderItem)
     {
         // sets order to shipped - and does any needed logic

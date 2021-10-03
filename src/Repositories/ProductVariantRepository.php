@@ -27,6 +27,7 @@ class ProductVariantRepository
      *
      * @param Escritor\Models\Product $products
      * @param array                 $payload
+     * @param Product|ProductRepository|\Illuminate\Support\Collection $product
      *
      * @return Escritor\Models\Variant
      */

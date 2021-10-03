@@ -38,17 +38,17 @@ class Transaction extends EscritorModel
 
     public $rules = [];
 
-    public function order()
+    public function order(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Order::class);
     }
 
-    public function refunds()
+    public function refunds(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Refund::class);
     }
 
-    public function getStateAttribute($value)
+    public function getStateAttribute($value): string
     {
         return ucfirst($value);
     }
@@ -58,22 +58,22 @@ class Transaction extends EscritorModel
         return $this->total;
     }
 
-    public function getTotalAttribute($value)
+    public function getTotalAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getTaxAttribute($value)
+    public function getTaxAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getShippingAttribute($value)
+    public function getShippingAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getSubtotalAttribute($value)
+    public function getSubtotalAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }

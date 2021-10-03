@@ -50,9 +50,9 @@ class CheckoutController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function addCoupon(Request $request)
+    public function addCoupon(Request $request): self
     {
         $this->cart->addCoupon($request->coupon);
 
@@ -62,9 +62,9 @@ class CheckoutController extends Controller
     /**
      * Remove a coupon from the cart
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function removeCoupon()
+    public function removeCoupon(): self
     {
         $this->cart->removeCoupon();
 
@@ -122,7 +122,7 @@ class CheckoutController extends Controller
     /**
      * Purchase failed view
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function failed()
     {
@@ -134,9 +134,9 @@ class CheckoutController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function reCalculateShipping(Request $request)
+    public function reCalculateShipping(Request $request): self
     {
         $this->customer->updateProfileAddress(
             array_merge(

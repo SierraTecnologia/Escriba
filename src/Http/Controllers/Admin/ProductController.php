@@ -54,7 +54,7 @@ class ProductController extends SitecController
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -64,7 +64,7 @@ class ProductController extends SitecController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\ProductRequest $request
+     * @param ProductRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -84,7 +84,7 @@ class ProductController extends SitecController
      *
      * @param int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id, Request $request)
     {
@@ -111,12 +111,12 @@ class ProductController extends SitecController
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\ProductRequest $request
+     * @param ProductRequest $request
      * @param int                             $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ProductRequest $request, $id)
+    public function update(ProductRequest $request, $id): self
     {
         $result = $this->service->update($id, $request->except(['_token', '_method']));
 
@@ -130,11 +130,11 @@ class ProductController extends SitecController
     /**
      * Add images to a product
      *
-     * @param \Illuminate\Http\ProductRequest $request
+     * @param Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function setImages(Request $request)
+    public function setImages(Request $request): self
     {
         dd('EscritoeProducts',
             $request->all()
@@ -164,9 +164,9 @@ class ProductController extends SitecController
      *
      * @param integer $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function deleteImage($id)
+    public function deleteImage($id): \Illuminate\Http\RedirectResponse
     {
         $image = $this->imageRepository->findImagesById($id);
 
@@ -190,12 +190,12 @@ class ProductController extends SitecController
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\ProductRequest $request
+     * @param Request $request
      * @param int                             $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function updateAlternativeData(Request $request, $id)
+    public function updateAlternativeData(Request $request, $id): self
     {
         $result = $this->service->updateAlternativeData($id, $request->except(['_token', '_method']));
 
