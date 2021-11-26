@@ -4,7 +4,7 @@ namespace Escritor\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EscritorRequest extends FormRequest
+class EscribaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
