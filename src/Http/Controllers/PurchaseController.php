@@ -16,7 +16,7 @@ class PurchaseController extends Controller
     /**
      * List all customer purchases
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function allPurchases()
     {
@@ -29,7 +29,7 @@ class PurchaseController extends Controller
     /**
      * View a customer purchase
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function getPurchase($id)
     {

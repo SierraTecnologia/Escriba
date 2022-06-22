@@ -19,7 +19,7 @@ class ProductController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function all()
     {
@@ -37,7 +37,7 @@ class ProductController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function show($url)
     {
@@ -55,7 +55,7 @@ class ProductController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function favorites()
     {

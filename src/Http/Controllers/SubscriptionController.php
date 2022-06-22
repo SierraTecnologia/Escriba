@@ -25,7 +25,7 @@ class SubscriptionController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function subscribe($id)
     {
@@ -44,7 +44,7 @@ class SubscriptionController extends Controller
     /**
      * View all customer subscriptions
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function allSubscriptions()
     {
@@ -58,7 +58,7 @@ class SubscriptionController extends Controller
      *
      * @param string $name
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function getSubscription($name)
     {
@@ -73,7 +73,7 @@ class SubscriptionController extends Controller
      * @param Request $request
      * @param string  $name
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function cancelSubscription(Request $request, $name)
     {

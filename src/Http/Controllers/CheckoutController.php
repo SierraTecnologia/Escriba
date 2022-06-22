@@ -24,7 +24,7 @@ class CheckoutController extends Controller
     /**
      * Show the customer confirmation page
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function confirm()
     {
@@ -36,7 +36,7 @@ class CheckoutController extends Controller
     /**
      * Confirm payment view
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function payment()
     {
@@ -76,7 +76,7 @@ class CheckoutController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function process(Request $request)
     {
@@ -94,7 +94,7 @@ class CheckoutController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function processWithLastCard(Request $request)
     {
@@ -110,7 +110,7 @@ class CheckoutController extends Controller
     /**
      * Purchase is completed view
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function complete()
     {

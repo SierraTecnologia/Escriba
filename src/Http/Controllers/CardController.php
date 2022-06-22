@@ -44,7 +44,7 @@ class CardController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function setCard(Request $request)
     {

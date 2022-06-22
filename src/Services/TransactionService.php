@@ -37,7 +37,7 @@ class TransactionService
     /**
      * Get all Orders.
      *
-     * @return Illuminate\Pagination\LengthAwarePaginator
+     * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function paginated()
     {

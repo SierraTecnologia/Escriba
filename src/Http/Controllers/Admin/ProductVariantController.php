@@ -66,7 +66,7 @@ class ProductVariantController extends SitecController
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function saveVariant(Request $request)
     {
@@ -80,7 +80,7 @@ class ProductVariantController extends SitecController
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function deleteVariant(Request $request)
     {
