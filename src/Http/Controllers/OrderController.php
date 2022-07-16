@@ -16,7 +16,7 @@ class OrderController extends Controller
     /**
      * List all customer orders
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function allOrders()
     {
@@ -30,7 +30,7 @@ class OrderController extends Controller
      *
      * @param int $id
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function getOrder($id)
     {
