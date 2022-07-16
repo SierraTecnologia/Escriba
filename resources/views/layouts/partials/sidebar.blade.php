@@ -46,7 +46,7 @@
                 <h3 class="panel-title">Outros tópicos de {{ $topic->user->name }}</h3>
             </div>
             <div class="panel-body">
-                @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
+                @include('pedreiro::layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
             </div>
         </div>
     @endif
@@ -58,7 +58,7 @@
                 <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
             </div>
             <div class="panel-body">
-                @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $categoryTopics])
+                @include('pedreiro::layouts.partials.sidebar_topics', ['sidebarTopics' => $categoryTopics])
             </div>
         </div>
     @endif
@@ -81,7 +81,7 @@
                 <h3 class="panel-title">Mais quente da Semana</h3>
             </div>
             <div class="panel-body">
-                @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
+                @include('pedreiro::layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
             </div>
         </div>
     @endif
@@ -138,7 +138,7 @@
 
     <div id="sticker">
 
-        @include('layouts.partials._resources_panel')
+        @include('pedreiro::layouts.partials._resources_panel')
 
         <div class="panel panel-default corner-radius" style="color:#a5a5a5">
             <div class="panel-body text-center">
