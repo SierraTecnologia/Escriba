@@ -67,7 +67,10 @@
     "config": {
         "sort-packages": true,
         "preferred-install": "dist",
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
     },
     "extra": {
         "laravel": {
